@@ -10,13 +10,15 @@ export default class HomePage extends React.Component {
     isLoading: true
   }
 
-
+  componentDidMount() {
+    this.setState({ loading: false })
+  }
   render() {
+
     if (this.state.loading) return < Spinner />
 
     return (
       <>
-        < h6 > < em > Where everything is a scam.</em></h6 >
         <div className='users' style={styles.users}>
           <ul>
             {
@@ -42,7 +44,7 @@ const styles = {
   userList: {
     width: '80vw',
     margin: 'auto',
-    fontFamily: 'Comic Sans',
+    fontFamily: 'Open Sans',
   },
   profileImage: {
     borderRadius: '100px',
