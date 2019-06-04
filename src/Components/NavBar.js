@@ -36,6 +36,9 @@ export default class NavBarLink extends React.Component {
     }
 
     render() {
+        const { currentUser } = this.props
+        console.log(currentUser);
+
         return (
 
             <Navbar color="light" light expand="md" sticky='top'>
@@ -43,9 +46,13 @@ export default class NavBarLink extends React.Component {
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <Link to={`/profile`}><NavLink>My Profile</NavLink></Link>
-                        </NavItem>
+                        {
+                            localStorage.getItem('jwt')
+                                ? <NavItem>
+                                    <Link to={`/users/${localStorage.getItem('profileImage')}`}><NavLink>My Profile</NavLink></Link>
+                                </NavItem>
+                                : null
+                        }
                         <NavItem>
                             <ModalForm currentUser={this.props.currentUser} setUser={this.props.setUser}><button /></ModalForm>
                         </NavItem>
