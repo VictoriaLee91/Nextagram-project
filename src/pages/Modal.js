@@ -41,7 +41,7 @@ class ModalForm extends React.Component {
                         }
                     </ModalBody>
                     <ModalFooter>
-                        <p style={styles.Paragraph}>{isSignup ? 'Already a member?' : 'Not a member?'} </p>
+                        <p style={styles.Paragraph}>{isSignup ? 'Already a member?' : 'Not a member yet?'} </p>
                         <p><Button color='info' onClick={this.toggleSignup}>{this.props.buttonLabel}{isSignup ? 'Log In' : 'Sign up'}</Button></p>
                         <p><Button color="secondary" onClick={this.toggle}>Cancel</Button></p>
                     </ModalFooter>

@@ -54,13 +54,6 @@ export default class NavBarLink extends React.Component {
                                 Options
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem>
-                                    Upload Photos
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Notifications
-                                    </DropdownItem>
-                                <DropdownItem divider />
                                 <DropdownItem onClick={this.handleLogOut}>
                                     Logout
                                 </DropdownItem>
